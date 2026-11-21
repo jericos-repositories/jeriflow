@@ -11,7 +11,7 @@ export function PageIntro({
   children?: ReactNode;
 }) {
   return (
-    <section className="page-intro container">
+    <section className="page-intro container" data-motion="reveal">
       <p className="eyebrow">{eyebrow}</p>
       <h1>{title}</h1>
       <p className="intro-description">{description}</p>

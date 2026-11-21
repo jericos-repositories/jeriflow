@@ -187,7 +187,7 @@ export function WorkspaceDemo() {
     );
   }
   return (
-    <div className="workspace-demo">
+    <div className="workspace-demo" data-motion="dashboard">
       <div className="browser-bar">
         <div className="window-dots" aria-hidden="true">
           <i />
@@ -317,6 +317,7 @@ export function WorkspaceDemo() {
           <div
             id="workspace-panel"
             className="workspace-panel"
+            key={`${project}-${view}`}
             role="tabpanel"
             aria-labelledby={`view-${view.toLowerCase()}`}
           >

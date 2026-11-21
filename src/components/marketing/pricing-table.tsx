@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 export function PricingTable() {
   const [yearly, setYearly] = useState(false);
   return (
-    <div className="pricing-section">
+    <div className="pricing-section" data-interval={yearly ? "yearly" : "monthly"}>
       <div className="pricing-toolbar">
         <div
           className="interval-toggle"
@@ -32,7 +32,7 @@ export function PricingTable() {
           Illustrative USD prices. No subscriptions are active.
         </span>
       </div>
-      <div className="pricing-grid" aria-live="polite">
+      <div className="pricing-grid" aria-live="polite" data-motion-stagger>
         {plans.map((plan) => {
           const price = yearly
             ? plan.monthly * (1 - yearlyDiscount)
@@ -47,7 +47,7 @@ export function PricingTable() {
                 {plan.featured && <span>Made for makers</span>}
               </div>
               <p>{plan.description}</p>
-              <div className="plan-price">
+              <div className="plan-price" key={yearly ? "yearly" : "monthly"}>
                 <strong>{displayPrice(price)}</strong>
                 <span>
                   {plan.monthly === 0 ? "/ month" : "/ person / month"}

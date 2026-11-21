@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { allowIndexing, siteConfig, siteUrl } from "@/lib/site-config";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { MotionController } from "@/components/marketing/motion-controller";
 import "./globals.css";
 
 const inter = localFont({
@@ -38,6 +39,7 @@ export default function RootLayout({
         </a>
         <SiteHeader />
         <main id="main">{children}</main>
+        <MotionController />
         <SiteFooter />
       </body>
     </html>

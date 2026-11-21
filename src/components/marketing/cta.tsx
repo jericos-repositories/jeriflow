@@ -2,7 +2,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 export function Cta() {
   return (
     <section className="container section cta-section">
-      <div className="cta-panel">
+      <div className="cta-panel" data-motion="reveal">
         <p className="eyebrow">Jerico Studio presents</p>
         <h2>
           Better work starts

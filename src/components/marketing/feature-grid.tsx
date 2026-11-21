@@ -2,7 +2,7 @@ import Link from "next/link";
 import { features } from "@/lib/content";
 export function FeatureGrid() {
   return (
-    <div className="feature-grid">
+    <div className="feature-grid" data-motion-stagger>
       {features.map((feature) => (
         <Link
           href={`/features#${feature.slug}`}

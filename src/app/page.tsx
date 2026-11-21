@@ -36,7 +36,7 @@ export default function Home() {
         <FeatureGrid />
       </section>
       <section className="section section-surface">
-        <div className="container split-layout">
+        <div className="container split-layout" data-motion-stagger>
           <Image
             className="editorial-image"
             src="/assets/illustrations/focus.svg"
@@ -93,7 +93,7 @@ export default function Home() {
               Explore solutions
             </ButtonLink>
           </div>
-          <div className="audience-grid">
+          <div className="audience-grid" data-motion-stagger>
             {audiences.map((a) => (
               <Link
                 className={`audience-card ${a.tone}`}

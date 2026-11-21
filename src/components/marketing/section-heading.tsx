@@ -10,7 +10,7 @@ export function SectionHeading({
   center?: boolean;
 }) {
   return (
-    <div className={`section-heading ${center ? "center" : ""}`}>
+    <div className={`section-heading ${center ? "center" : ""}`} data-motion="reveal">
       <p className="eyebrow">{eyebrow}</p>
       <h2>{title}</h2>
       {description && <p className="section-description">{description}</p>}

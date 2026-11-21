@@ -26,6 +26,7 @@ export default function FeaturesPage() {
           <section
             className={`feature-story feature-story-${index}`}
             id={feature.slug}
+            data-motion="reveal"
             key={feature.slug}
           >
             <div className="feature-story-copy">
@@ -101,7 +102,7 @@ export default function FeaturesPage() {
           </section>
         ))}
       </div>
-      <section className="container section compact-callout">
+      <section className="container section compact-callout" data-motion="reveal">
         <p>
           These capabilities are a product direction, not a claim of a live
           service.

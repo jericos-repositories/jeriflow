@@ -1,23 +1,16 @@
-import Image from "next/image";
+import { HeroIllustration } from "@/components/marketing/hero-illustration";
 import { ButtonLink } from "@/components/ui/button-link";
 export function Hero() {
   return (
     <section className="hero container">
-      <Image
-        className="hero-art"
-        src="/assets/illustrations/creative-flow.svg"
-        width={540}
-        height={160}
-        priority
-        alt=""
-      />
+      <HeroIllustration />
       <p className="hero-kicker">
         Meet JeriFlow. Built for people who make things.
       </p>
       <h1>
-        Make room for
+        <span className="hero-line">Make room for</span>
         <br />
-        better work.
+        <span className="hero-line">better work.</span>
       </h1>
       <p className="hero-description">
         Projects, tasks, and creative momentum—all in one calm workspace. Less

@@ -30,6 +30,7 @@ export default function SolutionsPage() {
           <section
             id={audience.id}
             className="audience-story"
+            data-motion-stagger
             key={audience.id}
           >
             <div>
