@@ -85,6 +85,14 @@ The Flowly ZIP remains unchanged in Downloads. Generic illustrations were palett
 
 The project `AGENTS.md` contains portable project instructions and generated, version-matched Next.js guidance. Reusable workflows live separately in [agent-skills](https://github.com/jericos-repositories/agent-skills), linked into this user's `.agents/skills/` directory. On a new Windows machine, clone that private repository and run its `scripts/link-skill.ps1`; cloud sessions need their own installation. Skill discovery does not grant additional permissions.
 
+## Task handoff
+
+`docs/handoff.md` is the designated context file for teammates and AI agents, including local/in-progress work and actual validation status. It is published separately through `eng-handoff`. Request `jeriflow $eng-handoff` to read the changes and commit/push only that Markdown file. The workflow excludes code and earlier unpushed code commits by publishing from a separate worktree based on the latest verified remote destination.
+
+Use `jeriflow $eng-publish pr` for code synchronization, validation, a short task branch, and a concise PR with relevant PNGs. Use `jeriflow $eng-publish direct-main` only for explicitly requested direct code publication permitted by repository rules. These workflows preserve unrelated work and stop for conflicts requiring a product decision. Creating/installing them does not publish the current changes. Routine screenshot folders remain PNG-only.
+
+The dated branch-policy observations are in [AGENTS.md](AGENTS.md). The current private-repository setup has no GitHub-enforced main protection on the organization's Free plan; the skills apply the documented workflow checks. If main later requires PRs, the Markdown-only handoff also stops for separate documentation-PR authorization.
+
 ## Future release decisions
 
 Choose a real contact endpoint, decide whether any real product should follow this concept, verify brand/domain availability, and approve hosting/indexing before a public launch. Treat any future authentication, database, billing, or collaboration as a separate phase.
