@@ -87,7 +87,7 @@ The project `AGENTS.md` contains portable project instructions and generated, ve
 
 ## Task handoff
 
-`docs/handoff.md` is the designated context file for teammates and AI agents, including local/in-progress work and actual validation status. It is published separately through `eng-handoff`. Request `jeriflow $eng-handoff` to read the changes and commit/push only that Markdown file. The workflow excludes code and earlier unpushed code commits by publishing from a separate worktree based on the latest verified remote destination.
+[docs/handoff.md](docs/handoff.md) holds current context for teammates and AI agents, including local/in-progress work and actual validation status. Request `jeriflow $eng-handoff` to read the changes and commit/push only that Markdown file. The workflow excludes code and earlier unpushed code commits by publishing from a separate worktree based on the latest verified remote destination.
 
 Use `jeriflow $eng-publish pr` for code synchronization, validation, a short task branch, and a concise PR with relevant PNGs. Use `jeriflow $eng-publish direct-main` only for explicitly requested direct code publication permitted by repository rules. These workflows preserve unrelated work and stop for conflicts requiring a product decision. Creating/installing them does not publish the current changes. Routine screenshot folders remain PNG-only.
 
