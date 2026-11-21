@@ -121,7 +121,7 @@ test("client navigation initializes new section reveals and preserves deep links
   await page.goto("/");
   await page.getByRole("navigation", { name: "Main navigation" }).getByRole("link", { name: "Features", exact: true }).click();
   await expect(page).toHaveURL(/\/features$/);
-  const section = page.locator(".feature-story").last();
+  const section = page.locator(".jf-feature-story").last();
   await section.scrollIntoViewIfNeeded();
   await expect.poll(() => section.evaluate(el => el.getAnimations().length)).toBe(1);
   await section.evaluate(async el => { await Promise.all(el.getAnimations().map(a => a.finished)); });
