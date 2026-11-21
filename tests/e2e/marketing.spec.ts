@@ -69,6 +69,11 @@ test("all seven routes have metadata, working local assets, responsive layouts, 
           fullPage: true,
         });
     }
+    // Evaluate contrast after responsive scroll reveals have finished.
+    await page.evaluate(async () => {
+      await new Promise(requestAnimationFrame);
+      await Promise.all(document.getAnimations().filter(animation => animation.effect?.getTiming().iterations !== Infinity).map(animation => animation.finished.catch(() => {})));
+    });
     const accessibility = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
       .analyze();
