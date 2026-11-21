@@ -1,132 +1,131 @@
-import { BrandMark } from "@/components/brand-mark";
-import { DashboardPreview } from "@/components/dashboard-preview";
-import { features } from "@/lib/content";
-import { siteConfig } from "@/lib/site-config";
-
+import Image from "next/image";
+import Link from "next/link";
+import { Check } from "lucide-react";
+import { Hero } from "@/components/marketing/hero";
+import { WorkspaceDemo } from "@/components/product-preview/workspace-demo";
+import { FeatureGrid } from "@/components/marketing/feature-grid";
+import { SectionHeading } from "@/components/marketing/section-heading";
+import { Workflow } from "@/components/marketing/workflow";
+import { PricingTable } from "@/components/marketing/pricing-table";
+import { Faq } from "@/components/marketing/faq";
+import { Cta } from "@/components/marketing/cta";
+import { ButtonLink } from "@/components/ui/button-link";
+import { audiences, generalFaqs } from "@/lib/content";
+import { pageMetadata } from "@/lib/site-config";
+export const metadata = pageMetadata(
+  "Make room for better work",
+  "Projects, tasks, notes, and creative momentum in one calm workspace. Meet the JeriFlow product concept by Jerico Studio.",
+  "/",
+);
 export default function Home() {
   return (
     <>
-      <a className="skip-link" href="#main">
-        Skip to content
-      </a>
-      <header className="site-header">
-        <div className="container header-inner">
-          <a className="brand" href="#main" aria-label="JeriFlow home">
-            <BrandMark />
-            <span>
-              JeriFlow<small>by Jerico Studio</small>
-            </span>
-          </a>
-          <nav aria-label="Main navigation">
-            <a href="#workspace">Workspace</a>
-            <a href="#features">Features</a>
-            <a href="#studio">The studio</a>
-          </nav>
-          <span className="concept-badge">A product concept</span>
-        </div>
-      </header>
-      <main id="main">
-        <section className="hero container" aria-labelledby="hero-title">
-          <div className="hero-illustration" aria-hidden="true">
-            <span className="paper blue">✳</span>
-            <span className="paper orange">◡</span>
-            <span className="paper lavender">✓</span>
-          </div>
-          <p className="eyebrow">For people who make things</p>
-          <h1 id="hero-title">
-            Make room for
-            <br />
-            <span>better work.</span>
-          </h1>
-          <p className="hero-description">{siteConfig.description}</p>
-          <div className="hero-actions">
-            <a className="button primary" href="#workspace">
-              Explore the workspace
-            </a>
-            <a className="button secondary" href="#features">
-              See the idea
-            </a>
-          </div>
-          <p className="concept-note">
-            A calm workspace, imagined. Sign-up is not available yet.
-          </p>
-        </section>
-        <section
-          id="workspace"
-          className="container"
-          aria-labelledby="workspace-title"
-        >
-          <h2 id="workspace-title" className="sr-only">
-            JeriFlow workspace concept
-          </h2>
-          <DashboardPreview />
-          <p className="preview-caption">
-            Illustrative workspace · fictional sample data · not a live
-            application
-          </p>
-        </section>
-        <section
-          id="features"
-          className="container features-section"
-          aria-labelledby="features-title"
-        >
-          <p className="eyebrow">Everything in its place</p>
-          <div className="section-heading">
-            <h2 id="features-title">
-              One workspace.
+      <Hero />
+      <section
+        className="container hero-demo"
+        aria-label="JeriFlow interactive workspace preview"
+      >
+        <WorkspaceDemo />
+      </section>
+      <section className="container section">
+        <SectionHeading
+          eyebrow="EVERYTHING IN ITS PLACE"
+          title="One workspace. Less juggling."
+          description="Designed around the everyday work of independent makers and small creative teams. The right pieces, thoughtfully connected."
+        />
+        <FeatureGrid />
+      </section>
+      <section className="section section-surface">
+        <div className="container split-layout">
+          <Image
+            className="editorial-image"
+            src="/assets/illustrations/focus.svg"
+            width={560}
+            height={320}
+            alt="A focused workspace illustration with a completed task"
+          />
+          <div>
+            <p className="eyebrow">A LITTLE LESS FRICTION</p>
+            <h2>
+              Keep your attention
               <br />
-              Less juggling.
+              on the good work.
             </h2>
-            <p>
-              For freelancers, designers, developers, and small creative teams.
-              A little more clarity from the first idea to the final handoff.
+            <p className="body-copy">
+              When the plan, the next task, and the important context have a
+              home, you have a little more room to make.
             </p>
+            <ul className="benefit-list">
+              {[
+                "Keep the brief beside the work it guides.",
+                "Make ownership and next steps easy to see.",
+                "Move between projects without losing the thread.",
+              ].map((item) => (
+                <li key={item}>
+                  <Check size={18} aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <ButtonLink href="/product" variant="text">
+              Get to know the workspace
+            </ButtonLink>
           </div>
-          <div className="feature-grid">
-            {features.map((feature) => (
-              <article className="feature-card" key={feature.title}>
-                <span
-                  className={`feature-symbol ${feature.tone}`}
-                  aria-hidden="true"
-                >
-                  {feature.symbol}
-                </span>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-              </article>
+        </div>
+      </section>
+      <section className="container section">
+        <SectionHeading
+          eyebrow="FIND YOUR RHYTHM"
+          title="From first thought to final handoff."
+          description="A simple workflow for a project with a clear direction and enough space for the unexpected."
+          center
+        />
+        <Workflow />
+      </section>
+      <section className="section solutions-home">
+        <div className="container">
+          <div className="section-topline">
+            <SectionHeading
+              eyebrow="BUILT FOR THE WAY YOU CREATE"
+              title="Your kind of work belongs here."
+            />
+            <ButtonLink href="/solutions" variant="outline">
+              Explore solutions
+            </ButtonLink>
+          </div>
+          <div className="audience-grid">
+            {audiences.map((a) => (
+              <Link
+                className={`audience-card ${a.tone}`}
+                key={a.id}
+                href={`/solutions#${a.id}`}
+              >
+                <span className="mini-label">FOR {a.name.toUpperCase()}</span>
+                <h3>{a.heading}</h3>
+                <span>Find your workflow</span>
+              </Link>
             ))}
           </div>
-        </section>
-        <section
-          id="studio"
-          className="container studio-section"
-          aria-labelledby="studio-title"
-        >
-          <div className="studio-panel">
-            <p className="eyebrow">Jerico Studio presents</p>
-            <h2 id="studio-title">
-              Good ideas need
-              <br />
-              room to grow.
-            </h2>
-            <p>
-              JeriFlow is a portfolio concept exploring a friendlier way to
-              organize creative work. This is the beginning of that idea.
-            </p>
-            <a className="button primary" href="#workspace">
-              Take another look
-            </a>
-          </div>
-        </section>
-      </main>
-      <footer className="site-footer container">
-        <a className="brand" href="#main">
-          <BrandMark />
-          <span>JeriFlow</span>
-        </a>
-        <p>By Jerico Studio · Concept / portfolio showcase</p>
-        <a href="#main">Back to top</a>
-      </footer>
+        </div>
+      </section>
+      <section className="container section">
+        <SectionHeading
+          eyebrow="A PROPOSED STARTING POINT"
+          title="Start small. Grow when you're ready."
+          description="Explore a simple pricing direction for the future product. These plans are illustrative; no payments or subscriptions are active."
+          center
+        />
+        <PricingTable />
+      </section>
+      <section className="container section faq-section">
+        <SectionHeading
+          eyebrow="QUESTIONS, ANSWERED"
+          title="A little more clarity."
+          center
+        />
+        <Faq items={generalFaqs} />
+      </section>
+      <Cta />
     </>
   );
 }

@@ -1,79 +1,92 @@
-# JeriFlow
+# JeriFlow by Jerico Studio
 
-The Next.js marketing-site foundation for **JeriFlow**, a fictional project and workflow workspace by **Jerico Studio**.
+A seven-page Next.js marketing website for a fictional, calm project and workflow workspace. Private source repository: [jericos-repositories/jeriflow](https://github.com/jericos-repositories/jeriflow).
 
-Private GitHub destination: [jericos-repositories/jeriflow](https://github.com/jericos-repositories/jeriflow).
+## What works
 
-## Current scope
+- Seven routes: `/`, `/product`, `/features`, `/solutions`, `/pricing`, `/about`, `/contact`.
+- Shared responsive navigation, active page states, keyboard-friendly mobile disclosure with focus handling and Escape closing, and footer.
+- Interactive fictional workspace: switch projects, use Board/Tasks/Notes/Progress tabs, add sample tasks, move them through statuses, and see progress update. State is in memory and resets on reload.
+- Monthly/yearly proposed pricing with a declared 20% annual discount, annual totals, comparison, and native FAQ disclosures.
+- Accessible demo contact form with required-field validation, inline errors, first-error focus, and an explicit no-delivery result. No submission request is made.
+- Original branding, locally hosted Inter via `next/font/local`, Lucide icons, four adapted local illustrations, page metadata, a generated social-preview PNG, robots, and environment-driven sitemap.
 
-The repository contains a branded responsive homepage, a static fictional dashboard preview, reusable components, shared content definitions, and metadata. All navigation links point to real homepage sections. It has no live sign-up, backend, contact delivery, subscriptions, or collaboration features.
+This is a portfolio/product concept. It has no real accounts, payments, team collaboration, message delivery, or backend. There are no fabricated customers, testimonials, contact addresses, or legal policies. No public deployment has been performed.
 
-The full seven-route marketing site is planned, not implemented in this setup. Read [the project brief and roadmap](docs/project-brief.md). The [original blueprint](docs/reference/jerico-studio-jeriflow-blueprint.html) is preserved as documentation and is not deployed as the Next.js application.
+## Local setup
 
-## Requirements
-
-- Node.js **24 LTS** (`.nvmrc` selects major version 24).
-- npm and Git.
-
-Node 24 was installed alongside the existing Node 20 during setup. The globally active version was not changed. If using nvm-windows, select the installed Node 24 version before running this project's commands:
+Use Node **24 LTS** and npm. If using the existing nvm-windows installation:
 
 ```powershell
-nvm list
 nvm use 24.22.3
-node --version
-```
-
-On another computer, install a current Node 24 LTS release and select that installed version. Do not assume this machine's exact patch version is already available there.
-
-## Run locally
-
-From this directory:
-
-```powershell
+cd websites/jeriflow
 npm ci
 npm run dev
 ```
 
-Open the Local URL printed in the terminal, normally `http://localhost:3000`. Next.js requires its development server; Live Preview is intended for standalone HTML files and does not run this application.
+If the terminal is already in this project, omit the `cd` line. On another machine, install/select an available Node 24 LTS patch version. `.nvmrc` records the major version; nvm-windows may need the explicit installed version.
 
-## Verify and build
+Open the Local URL printed by Next.js, normally `http://localhost:3000`. VS Code Live Preview is for standalone HTML and does not run the Next.js application.
+
+## Validation
 
 ```powershell
 npm run lint
 npm run typecheck
+npm run check:assets
 npm run build
+npm run test:e2e
 ```
 
-`typecheck` generates Next.js route types before running TypeScript. To preview a successful production build:
+The typecheck command generates Next.js route types before TypeScript. Browser tests start the production server on port 3011. On Windows they use installed Google Chrome; on other platforms install Chromium with `npx playwright install chromium` first. Keep port 3011 available for the test server.
+
+The browser suite covers all routes at 360/390/768/1024/1440px, local image responses, page metadata, automated WCAG-tagged axe checks, mobile focus/Escape/navigation, pricing arithmetic, FAQ keyboard behavior, workspace interactions, contact validation without POST requests, reduced motion, preview robots/sitemap, social-image rendering, and the 404 page. Screenshots and JSON results are generated under ignored `test-results/`.
+
+Automated accessibility checks are not a complete manual audit. No Lighthouse or Core Web Vitals score is claimed.
+
+To run the production build yourself:
 
 ```powershell
+npm run build
 npm run start
 ```
 
-No automated application test suite has been added to this initial scaffold. Linting, type checking, a production build, and local page checks are the setup checks.
+## Preview indexing and metadata
+
+No environment variables are required for local use. `.env.example` describes two optional values:
+
+- `SITE_URL`: the actual approved http(s) origin, with no path or query. There is no invented production domain.
+- `ALLOW_INDEXING`: default false. Enable only for an approved public launch with `SITE_URL` configured.
+
+Without both values, pages are `noindex, nofollow`, robots disallows crawling, and the sitemap has no fabricated URL entries. Next.js may use its localhost fallback for generated social-image URLs during local builds; set the real origin and rebuild before launch. The original design and implementation documents live in `docs/`, not `public/`, so they are not served as site routes.
 
 ## Organization
 
 ```text
-src/app/             Routes, root layout, global design tokens, icon
-src/components/      Original brand mark and dashboard preview
-src/lib/             Site configuration and fictional preview data
-docs/                Brief, roadmap, asset audit, original blueprint
-public/              Future directly served project assets
+src/app/                     Seven routes, layout, error/404, font, metadata
+src/components/layout/       Shared navigation and footer
+src/components/marketing/    Hero, features, workflow, pricing, FAQ, contact
+src/components/product-preview/ Interactive workspace and supporting UI
+src/components/ui/           Shared link button variants
+src/lib/                     Typed content, navigation, pricing, site config
+public/assets/               Original SVG branding, adapted art, Inter font
+scripts/                     Reproducible asset integrity check
+tests/e2e/                  Browser interaction and accessibility checks
+docs/                       Brief, provenance, requirements, license notices
 ```
 
-The generator configured App Router, TypeScript, Tailwind CSS, ESLint, npm, `src/`, and the `@/*` import alias. No environment variables are currently required. Keep dependencies, generated output, local logs, and secrets out of commits; retain `package-lock.json`.
+## Design sources and assets
+
+Read [the project brief](docs/project-brief.md), [asset audit](docs/asset-audit.md), and [manifest](docs/asset-manifest.json). The supplied [blueprint](docs/reference/jerico-studio-jeriflow-blueprint.html) remains byte-for-byte preserved. The [master prompt](docs/reference/implementation-request.md) records the Phase 1 request.
+
+The Flowly ZIP remains unchanged in Downloads. Generic illustrations were palette-adapted; original JeriFlow/Jerico Studio marks and the live React workspace replace old-brand graphics and mockups. The manifest records provenance and hashes. Font and icon notices are retained in `docs/licenses/`.
 
 ## Shared AI skills
 
-`AGENTS.md` records this project's own instructions and the generated Next.js guidance. The shared `create-website-repo` workflow is maintained in [jericos-repositories/agent-skills](https://github.com/jericos-repositories/agent-skills).
+The project `AGENTS.md` contains portable project instructions and generated, version-matched Next.js guidance. Reusable workflows live separately in [agent-skills](https://github.com/jericos-repositories/agent-skills), linked into this user's `.agents/skills/` directory. On a new Windows machine, clone that private repository and run its `scripts/link-skill.ps1`; cloud sessions need their own installation. Skill discovery does not grant additional permissions.
 
-In the existing local workspace, the skill is already linked into the user's `.agents/skills/create-website-repo` directory. Its source and supporting files were checked from this project. It remains one maintained copy, not a duplicated skills repository inside JeriFlow.
+## Future release decisions
 
-On a new Windows machine, clone the private `agent-skills` repository with an authorized account, then run its `scripts/link-skill.ps1`. Check the Codex skill picker on the next turn or restart the client. Cloud/CI sessions need their own skill installation. Skill discovery does not grant additional filesystem or GitHub permissions.
+Choose a real contact endpoint, decide whether any real product should follow this concept, verify brand/domain availability, and approve hosting/indexing before a public launch. Treat any future authentication, database, billing, or collaboration as a separate phase.
 
-## Design and assets
-
-The blueprint's colors and whitespace guide this starter. Inter is the intended font; the system fallback stack is used without remote font downloads. The J mark and decorative illustration are original code-native assets. The old Flowly archive was inspected but not imported; see [the asset audit](docs/asset-audit.md).
-
-Hosting and public launch are separate decisions. No production deployment is configured by this repository setup.
+Read the [Phase 1 implementation and validation report](docs/implementation-report.md) for results and deliberate limitations.

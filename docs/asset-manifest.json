@@ -1,0 +1,66 @@
+{
+  "original_archive_sha256": "effb0fe5dbc2d47bc166c9b7ef16f8bb694333fb74ae75a2b010161e651cfb6a",
+  "assets": [
+    {
+      "file": "public/assets/brand/jerico-studio-logo.svg",
+      "origin": "Original JeriFlow implementation",
+      "action": "created",
+      "sha256": "1bd66b22d3d7a2b951c20f1e5b62b4df4511390114b4bff84a7ad71c89ededd3"
+    },
+    {
+      "file": "public/assets/brand/jeriflow-logo.svg",
+      "origin": "Original JeriFlow implementation",
+      "action": "created",
+      "sha256": "cc61b4749f14a590ab4d0edd2647c525b97dfa27b24d2f3e1585850763d0221b"
+    },
+    {
+      "file": "public/assets/brand/jeriflow-mark.svg",
+      "origin": "Original JeriFlow implementation",
+      "action": "created",
+      "sha256": "77a7ff08dee0ef8d829257c0c420389fd09977ec833f54b243994f471c322829"
+    },
+    {
+      "file": "public/assets/fonts/inter-latin-variable.woff2",
+      "origin": "@fontsource-variable/inter 5.3.0",
+      "action": "self-hosted; OFL notice in docs/licenses",
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    {
+      "file": "public/assets/illustrations/analytics.svg",
+      "origin": "Flowly asset kit, generic illustration",
+      "action": "palette adapted; no old branding",
+      "sha256": "543a8eb6ae174ce30bccd54b1627c1becf2ec9ac73d542d76155e6d06737df18"
+    },
+    {
+      "file": "public/assets/illustrations/collaboration.svg",
+      "origin": "Flowly asset kit, generic illustration",
+      "action": "palette adapted; no old branding",
+      "sha256": "f8bfdd5c3f6ffe9edc364b992e3a8354bd5e5ed400b43f07edd974976e2ce0c2"
+    },
+    {
+      "file": "public/assets/illustrations/creative-flow.svg",
+      "origin": "Original JeriFlow implementation",
+      "action": "created",
+      "sha256": "d1b19b51a82f0700730be6c0c8e6b801dd304cdcd541e2e8632af540431bc197"
+    },
+    {
+      "file": "public/assets/illustrations/focus.svg",
+      "origin": "Flowly asset kit, generic illustration",
+      "action": "palette adapted; no old branding",
+      "sha256": "12b935d45ba3f56727b41653da3b58d4614546ea05e91e2e5d5cfbdfa1074868"
+    },
+    {
+      "file": "public/assets/illustrations/teamwork.svg",
+      "origin": "Flowly asset kit, generic illustration",
+      "action": "palette adapted; no old branding",
+      "sha256": "d1f6ed1b44a434099c30087001f7a7dbde729190a41a3dcf0384a3b4bc0461b4"
+    }
+  ],
+  "replaced": [
+    "Flowly logos and favicon: original JeriFlow/Jerico Studio SVGs",
+    "Named static mockups: interactive React workspace demo"
+  ],
+  "not_imported": [
+    "Redundant icon SVGs; Lucide React is the shared icon library"
+  ]
+}
