@@ -305,6 +305,7 @@ h3 {
 }
 .hero-art {
   width: 440px;
+  height: auto;
   margin: 0 auto 22px;
 }
 .hero-kicker {
@@ -2249,6 +2250,180 @@ progress::-moz-progress-bar {
     font-size: 0.8125rem;
   }
 }
+/* Calm by default. Delightful on interaction.
+   All resting styles stay visible; no JavaScript-dependent hidden content. */
+:root {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-interaction: 220ms;
+  --motion-reveal-offset: 18px;
+  --motion-dashboard-offset: 26px;
+}
+
+.hero-line {
+  display: inline-block;
+}
+.hero-line,
+.hero-kicker,
+.hero-description,
+.hero .button-row,
+.hero > .fine-print {
+  animation: hero-enter 700ms var(--motion-ease) backwards;
+}
+.hero-kicker { animation-delay: 180ms; }
+.hero-line:first-child { animation-delay: 300ms; }
+.hero-line:last-child { animation-delay: 450ms; }
+.hero-description { animation-delay: 600ms; }
+.hero .button-row { animation-delay: 750ms; }
+.hero > .fine-print { animation-delay: 850ms; }
+.hero .button-row:focus-within { animation: none; }
+.hero-kicker {
+  transition: color var(--motion-interaction), background-color var(--motion-interaction),
+    border-color var(--motion-interaction), transform var(--motion-interaction) var(--motion-ease);
+}
+.hero-art-entry {
+  --art-delay: 60ms;
+  --float-duration: 8.4s;
+  --float-y: -5px;
+  --float-rotation: -0.6deg;
+  animation: hero-art-enter 750ms var(--motion-ease) var(--art-delay) backwards;
+}
+.hero-art-entry:nth-child(2) {
+  --art-delay: 140ms; --float-duration: 10.2s; --float-y: 4px; --float-rotation: 0deg;
+}
+.hero-art-entry:nth-child(3) {
+  --art-delay: 220ms; --float-duration: 11.6s; --float-y: -4px; --float-rotation: 0.5deg;
+}
+.hero-art-entry:nth-child(4) {
+  --art-delay: 300ms; --float-duration: 9.6s; --float-y: 5px; --float-rotation: 0deg;
+}
+.hero-art-entry:nth-child(5) {
+  --art-delay: 380ms; --float-duration: 10.8s; --float-y: -6px; --float-rotation: 0.5deg;
+}
+.hero-art-float,
+.hero-art-hover {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.hero-art-float {
+  animation: hero-float var(--float-duration) ease-in-out calc(var(--art-delay) + 750ms) infinite;
+}
+.hero-art-hover {
+  transition: transform 350ms var(--motion-ease);
+}
+.hero-art[data-motion-paused] .hero-art-float {
+  animation-play-state: paused;
+}
+.button {
+  transition: background-color var(--motion-interaction), color var(--motion-interaction),
+    border-color var(--motion-interaction), box-shadow var(--motion-interaction),
+    transform var(--motion-interaction) var(--motion-ease);
+}
+.button:active { transform: translateY(0); }
+.button svg { transition: transform var(--motion-interaction) var(--motion-ease); }
+.main-navigation > a,
+.footer-grid a,
+.audience-jumps a,
+.menu-toggle,
+.interval-toggle button,
+.workspace-tabs button,
+.sidebar-project,
+.mobile-projects button,
+.task-status,
+.add-task,
+.faq-list summary {
+  transition: color var(--motion-interaction), background-color var(--motion-interaction),
+    border-color var(--motion-interaction), box-shadow var(--motion-interaction);
+}
+.main-navigation > a[aria-current="page"]::after {
+  animation: active-link-enter 220ms var(--motion-ease) backwards;
+}
+.feature-card,
+.audience-card {
+  transition: border-color var(--motion-interaction), box-shadow var(--motion-interaction),
+    transform 300ms var(--motion-ease);
+}
+.feature-card:focus-visible,
+.feature-card:focus-within {
+  border-color: var(--primary);
+}
+.interval-toggle button[aria-pressed="true"] {
+  box-shadow: 0 1px 3px #17171714;
+}
+.plan-price,
+.workspace-panel {
+  animation: state-enter 280ms var(--motion-ease) backwards;
+}
+.faq-list summary svg {
+  transition: transform 280ms var(--motion-ease);
+}
+/* Native disclosure semantics and the no-JS interaction are preserved. */
+@supports (interpolate-size: allow-keywords) {
+  .faq-list details { interpolate-size: allow-keywords; }
+  .faq-list details::details-content {
+    block-size: 0;
+    overflow: clip;
+    opacity: 0;
+    transition: block-size 280ms var(--motion-ease), opacity 220ms ease,
+      content-visibility 280ms allow-discrete;
+  }
+  .faq-list details[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .hero-art-entry:hover .hero-art-hover { transform: translateY(-3px) rotate(0.6deg); }
+  .hero-art-entry:hover .hero-art-float { animation-play-state: paused; }
+  .hero-kicker:hover {
+    transform: translateY(-1px);
+    color: var(--primary-strong);
+    border-color: color-mix(in srgb, var(--primary) 35%, white);
+    background: color-mix(in srgb, var(--primary) 11%, white);
+  }
+  .button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px #16558020;
+  }
+  .button:hover svg.lucide-arrow-right { transform: translateX(3px); }
+  .feature-card:hover { box-shadow: 0 8px 22px #17171706; }
+  .workspace-tabs button:hover:not([aria-selected="true"]),
+  .sidebar-project:hover:not(.active),
+  .mobile-projects button:hover:not([aria-pressed="true"]) { background: var(--surface); color: var(--ink); }
+  .faq-list summary:hover { color: var(--primary-strong); }
+}
+@media (max-width: 1050px) {
+  .main-navigation.is-open {
+    animation: menu-enter 240ms var(--motion-ease) backwards;
+  }
+}
+@media (max-width: 600px) {
+  :root { --motion-reveal-offset: 12px; --motion-dashboard-offset: 20px; }
+  .hero-art { --float-intensity: 0.6; }
+}
+@keyframes hero-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-art-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(calc(var(--float-y) * var(--float-intensity, 1))) rotate(var(--float-rotation)); }
+}
+@keyframes menu-enter {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes active-link-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes state-enter {
+  from { opacity: 0.7; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -2258,5 +2433,13 @@ progress::-moz-progress-bar {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+  .button:hover,
+  .feature-card:hover,
+  .audience-card:hover,
+  .hero-kicker:hover,
+  .hero-art-hover,
+  .button:hover svg.lucide-arrow-right {
+    transform: none !important;
   }
 }

@@ -39,7 +39,7 @@ export default function PricingPage() {
           title="A place for every stage."
           description="This comparison describes the concept's intended plan structure. Features and limits are not finalized."
         />
-        <div className="table-scroll">
+        <div className="table-scroll" data-motion="reveal">
           <table className="comparison-table">
             <caption className="sr-only">
               Illustrative JeriFlow plan features

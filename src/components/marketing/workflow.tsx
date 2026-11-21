@@ -21,7 +21,7 @@ const steps = [
 ];
 export function Workflow() {
   return (
-    <div className="workflow-grid">
+    <div className="workflow-grid" data-motion-stagger>
       {steps.map((step) => (
         <article key={step.title}>
           <span className={`icon-tile ${step.tone}`}>

@@ -16,7 +16,7 @@ export default function AboutPage() {
         title="Thoughtful software. A little more human."
         description="Jerico Studio is a founder-led independent digital product studio concept. JeriFlow is our exploration of what happens when work gets a calmer place to live."
       />
-      <section className="container about-statement">
+      <section className="container about-statement" data-motion="reveal">
         <div className="studio-signature">
           <Image
             src="/assets/brand/jerico-studio-logo.svg"
@@ -32,7 +32,7 @@ export default function AboutPage() {
           Not give you more to think about.
         </p>
       </section>
-      <section className="container section split-layout">
+      <section className="container section split-layout" data-motion-stagger>
         <div>
           <p className="eyebrow">WHY JERIFLOW</p>
           <h2>
@@ -66,7 +66,7 @@ export default function AboutPage() {
             <br />
             Considered in the details.
           </h2>
-          <div className="principle-grid">
+          <div className="principle-grid" data-motion-stagger>
             {[
               {
                 icon: Compass,
@@ -93,7 +93,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="container section studio-direction">
+      <section className="container section studio-direction" data-motion="reveal">
         <p className="eyebrow">A DIRECTION, NOT A FINISHED STORY</p>
         <h2>
           Build carefully.

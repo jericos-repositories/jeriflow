@@ -16,7 +16,7 @@ export default function ContactPage() {
         title="A little conversation can go a long way."
         description="A question about JeriFlow, a thought on the design, or a workflow worth exploring. Here is how that conversation could begin."
       />
-      <section className="container contact-layout section">
+      <section className="container contact-layout section" data-motion-stagger>
         <aside className="contact-aside">
           <span className="icon-tile lavender">
             <MessageSquare size={26} aria-hidden="true" />

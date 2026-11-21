@@ -41,7 +41,7 @@ export default function ProductPage() {
         <Workflow />
       </section>
       <section className="section section-surface">
-        <div className="container split-layout">
+        <div className="container split-layout" data-motion-stagger>
           <div>
             <p className="eyebrow">THE CONTEXT COMES WITH YOU</p>
             <h2>
@@ -64,7 +64,7 @@ export default function ProductPage() {
           <NotePreview />
         </div>
       </section>
-      <section className="container section split-layout">
+      <section className="container section split-layout" data-motion-stagger>
         <ProgressPreview />
         <div>
           <p className="eyebrow">SHARED DIRECTION</p>
