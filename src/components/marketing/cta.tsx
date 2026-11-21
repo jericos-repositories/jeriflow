@@ -12,17 +12,14 @@ export function Cta() {
         <p>
           A calm workspace for creative people.
           <br />
-          See the idea. Try the details. Make it your kind of work.
+          Bring the plan, the details, and the next step together.
         </p>
         <div className="button-row">
-          <ButtonLink href="/product#demo">Explore the demo</ButtonLink>
-          <ButtonLink href="/contact" variant="outline">
-            Talk about the concept
+          <ButtonLink href="/product#demo">Explore the workspace</ButtonLink>
+          <ButtonLink href="/solutions" variant="outline">
+            Find your workflow
           </ButtonLink>
         </div>
-        <span className="fine-print">
-          A portfolio concept. No live accounts or subscriptions.
-        </span>
       </div>
     </section>
   );

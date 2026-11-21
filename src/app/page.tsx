@@ -14,7 +14,7 @@ import { audiences, generalFaqs } from "@/lib/content";
 import { pageMetadata } from "@/lib/site-config";
 export const metadata = pageMetadata(
   "Make room for better work",
-  "Projects, tasks, notes, and creative momentum in one calm workspace. Meet the JeriFlow product concept by Jerico Studio.",
+  "Projects, tasks, notes, and creative momentum in one calm workspace. Make room for better work with JeriFlow by Jerico Studio.",
   "/",
 );
 export default function Home() {
@@ -110,9 +110,9 @@ export default function Home() {
       </section>
       <section className="container section">
         <SectionHeading
-          eyebrow="A PROPOSED STARTING POINT"
+          eyebrow="ROOM FOR YOUR NEXT CHAPTER"
           title="Start small. Grow when you're ready."
-          description="Explore a simple pricing direction for the future product. These plans are illustrative; no payments or subscriptions are active."
+          description="From personal projects to shared priorities, find a plan that fits the way you work."
           center
         />
         <PricingTable />

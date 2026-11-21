@@ -23,7 +23,7 @@ export function Hero() {
         </ButtonLink>
       </div>
       <p className="fine-print">
-        A product concept by Jerico Studio. Explore it, no account needed.
+        A little structure. A lot more room to create.
       </p>
     </section>
   );

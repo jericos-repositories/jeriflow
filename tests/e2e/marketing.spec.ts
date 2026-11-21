@@ -184,10 +184,10 @@ test("workspace tabs, sample tasks, progress and sample projects work without a 
   await demo.getByRole("tab", { name: "Progress", exact: true }).click();
   await expect(demo.locator(".progress-head strong")).toHaveText("50%");
   await demo
-    .getByRole("button", { name: "Add sample task", exact: true })
+    .getByRole("button", { name: "Add task", exact: true })
     .click();
   await expect(
-    demo.getByText("New sample task 1", { exact: true }),
+    demo.getByText("New task 1", { exact: true }),
   ).toBeVisible();
   await demo
     .getByRole("button", { name: "Brand refresh", exact: true })
@@ -198,7 +198,7 @@ test("workspace tabs, sample tasks, progress and sample projects work without a 
   ).toBeVisible();
   await page.reload();
   await expect(
-    demo.getByText("New sample task 1", { exact: true }),
+    demo.getByText("New task 1", { exact: true }),
   ).toHaveCount(0);
 });
 
@@ -210,7 +210,7 @@ test("contact validation is accessible and does not pretend to send a message", 
     if (req.method() === "POST") submissions.push(req.url());
   });
   await page.goto("/contact");
-  await page.getByRole("button", { name: "Check demo message" }).click();
+  await page.getByRole("button", { name: "Review message" }).click();
   await expect(page.locator("#contact-form").getByRole("alert")).toBeVisible();
   await expect(page.getByLabel("Your name")).toBeFocused();
   await page.getByLabel("Your name").fill("Sample Visitor");
@@ -221,13 +221,13 @@ test("contact validation is accessible and does not pretend to send a message", 
     .fill(
       "I would like to discuss the workspace design and interaction details.",
     );
-  await page.getByRole("button", { name: "Check demo message" }).click();
+  await page.getByRole("button", { name: "Review message" }).click();
   await expect(page.getByLabel("Email address")).toHaveAttribute(
     "aria-invalid",
     "true",
   );
   await page.getByLabel("Email address").fill("visitor@example.test");
-  await page.getByRole("button", { name: "Check demo message" }).click();
+  await page.getByRole("button", { name: "Review message" }).click();
   await expect(page.getByRole("status")).toContainText(
     "Nothing was sent or stored.",
   );

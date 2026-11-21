@@ -55,8 +55,8 @@ export function ContactForm() {
       <div className="form-demo-note">
         <Info size={20} aria-hidden="true" />
         <p>
-          <strong>Demo form. Nothing is sent or stored.</strong>Try the
-          validation below. A real message endpoint has not been connected.
+          <strong>A clear starting point.</strong>Use this space to prepare and
+          review your message before sharing it.
         </p>
       </div>
       {Object.keys(errors).length > 0 && (
@@ -104,16 +104,16 @@ export function ContactForm() {
         </p>
       )}
       <button type="submit" className="button button-primary">
-        Check demo message
+        Review message
       </button>
       <p className="fine-print">
-        This button checks the fields only. It does not send an email or create
-        an enquiry.
+        Your draft stays in this browser. Reviewing checks the details; it
+        does not send a message.
       </p>
       {checked && (
         <p className="form-checked" role="status">
           <CheckCircle2 size={20} />
-          Your demo message passes validation. Nothing was sent or stored.
+          Your message is ready to review. Nothing was sent or stored.
         </p>
       )}
     </form>

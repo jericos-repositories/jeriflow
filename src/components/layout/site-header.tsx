@@ -75,7 +75,7 @@ export function SiteHeader() {
             className="button button-primary nav-cta"
             onClick={() => close()}
           >
-            Explore the demo
+            Explore the workspace
           </Link>
         </nav>
       </div>

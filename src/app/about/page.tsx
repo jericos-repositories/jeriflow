@@ -5,7 +5,7 @@ import { Cta } from "@/components/marketing/cta";
 import { pageMetadata } from "@/lib/site-config";
 export const metadata = pageMetadata(
   "About Jerico Studio",
-  "Meet the concept studio behind JeriFlow and the thoughtful, human-centered design philosophy shaping it.",
+  "Meet the design thinking behind JeriFlow and Jerico Studio: thoughtful tools, clear details, and a more human approach to creative work.",
   "/about",
 );
 export default function AboutPage() {
@@ -14,7 +14,7 @@ export default function AboutPage() {
       <PageIntro
         eyebrow="THE STUDIO BEHIND THE FLOW"
         title="Thoughtful software. A little more human."
-        description="Jerico Studio is a founder-led independent digital product studio concept. JeriFlow is our exploration of what happens when work gets a calmer place to live."
+        description="JeriFlow brings Jerico Studio's approach to creative work into focus: clear structure, thoughtful details, and room for the way you think."
       />
       <section className="container about-statement" data-motion="reveal">
         <div className="studio-signature">
@@ -24,7 +24,7 @@ export default function AboutPage() {
             height={60}
             alt="Jerico Studio"
           />
-          <span>INDEPENDENT PRODUCT STUDIO · CONCEPT</span>
+          <span>THOUGHTFUL DIGITAL DESIGN</span>
         </div>
         <p>
           Good tools should help you think.
@@ -45,8 +45,8 @@ export default function AboutPage() {
             conversation, a decision, and the small next step that follows.
           </p>
           <p className="body-copy">
-            JeriFlow was conceptualized to bring those pieces closer. It
-            explores a workspace that is structured enough to create clarity and
+            JeriFlow brings those pieces closer, with a workspace
+            structured enough to create clarity and
             simple enough to leave room for creative work.
           </p>
         </div>
@@ -94,22 +94,20 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="container section studio-direction" data-motion="reveal">
-        <p className="eyebrow">A DIRECTION, NOT A FINISHED STORY</p>
+        <p className="eyebrow">OUR DESIGN PHILOSOPHY</p>
         <h2>
           Build carefully.
           <br />
           Learn from the details.
         </h2>
         <p>
-          Our mission for this concept is to make creative work easier to
-          organize without making it feel mechanical. The longer-term direction
-          is thoughtful, focused digital tools—developed one useful idea at a
-          time.
+          Creative work should be easier to organize without feeling
+          mechanical. That means thoughtful, focused tools and a clear place
+          for every useful idea.
         </p>
         <p>
-          Jerico Studio and JeriFlow are portfolio concepts. This site does not
-          represent a registered company, an operating SaaS service, or a
-          verified business history.
+          From the first brief to the final handoff, every detail should help
+          you understand the work and feel ready for the next step.
         </p>
       </section>
       <Cta />

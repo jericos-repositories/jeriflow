@@ -148,7 +148,7 @@ export const generalFaqs = [
   {
     question: "What is JeriFlow?",
     answer:
-      "JeriFlow is a proposed project and workflow workspace by Jerico Studio. This portfolio website explores its brand, intended capabilities, and interaction design.",
+      "JeriFlow brings projects, tasks, notes, and progress into one calm workspace, with a clear place for the work and the context around it.",
   },
   {
     question: "Who is it designed for?",
@@ -156,36 +156,36 @@ export const generalFaqs = [
       "Freelancers, designers, developers, and small creative teams who want a calmer way to keep projects, tasks, and notes connected.",
   },
   {
-    question: "Can I create an account today?",
+    question: "How can I explore the workspace?",
     answer:
-      "Not yet. The workspace on this site is an interactive demonstration with fictional data. It does not create accounts or save real team work.",
+      "Open the Product page and explore with sample projects. Switch views, move a task, or add a new one. No account is needed, and your changes reset when you reload.",
   },
   {
-    question: "Can I try the product idea?",
+    question: "How do the different views fit together?",
     answer:
-      "Yes. On the Product page, switch views, change the sample project, add a sample task, and move cards through the board. Changes stay in the preview and reset when it reloads.",
+      "Board shows each stage of the work. Tasks brings the details into a list. Notes keeps the brief and review comments close, while Progress shows what is done and what comes next.",
   },
 ];
 
 export const pricingFaqs = [
   {
-    question: "Are these plans available to purchase?",
+    question: "Which plan fits the way I work?",
     answer:
-      "No. All plans, feature allocations, and prices are illustrative product proposals. No subscription or payment is collected on this website.",
+      "Use Starter as a guide for personal organization, Creator for more involved creative projects, and Team for shared priorities. The comparison brings the differences together so you can explore the right fit.",
   },
   {
     question: "How does the yearly option work?",
     answer:
-      "The yearly illustration applies a 20% discount to the monthly per-person price. Creator is $115.20 per person per year and Team is $230.40 per person per year. These are assumptions for this concept, not live offers.",
+      "The yearly view applies a 20% discount to the monthly per-person price. Creator is $115.20 per person for the full year, and Team is $230.40. Switch between Monthly and Yearly to compare the totals.",
   },
   {
-    question: "What does the Starter plan represent?",
+    question: "What is included in Starter?",
     answer:
-      "A proposed free starting point for an individual workspace with basic task organization and project notes. Its limits have not been finalized.",
+      "The Starter comparison covers a personal workspace, basic task boards, project notes, and a progress overview: a focused set of tools for organizing your own projects.",
   },
   {
-    question: "Can I ask about the concept?",
+    question: "Can I explore the workspace before choosing?",
     answer:
-      "The Contact page lets you explore a validated demo form. Message delivery is not connected yet, and the form clearly reports that nothing is sent.",
+      "Yes. Open the workspace on the Product page to try boards, tasks, notes, and progress with sample projects. No account or payment details are needed.",
   },
 ];

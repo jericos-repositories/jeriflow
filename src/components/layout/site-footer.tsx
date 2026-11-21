@@ -19,7 +19,7 @@ export function SiteFooter() {
             <br />
             who make things.
           </p>
-          <span className="concept-label">A Jerico Studio product concept</span>
+          <span className="concept-label">Made with care by Jerico Studio</span>
         </div>
         <div>
           <h2>Explore JeriFlow</h2>
@@ -33,7 +33,7 @@ export function SiteFooter() {
           <h2>The studio</h2>
           <Link href="/about">About Jerico Studio</Link>
           <Link href="/contact">Contact</Link>
-          <Link href="/product#demo">Try the concept</Link>
+          <Link href="/product#demo">Explore the workspace</Link>
         </div>
         <div className="footer-note">
           <p>
@@ -43,13 +43,13 @@ export function SiteFooter() {
           <span>
             Independent by design.
             <br />
-            Concept / portfolio showcase.
+            Thoughtful in every detail.
           </span>
         </div>
       </div>
       <div className="container footer-bottom">
         <span>© 2026 Jerico Studio</span>
-        <span>No live accounts, billing, or message delivery.</span>
+        <span>A little clarity. More room to create.</span>
       </div>
     </footer>
   );

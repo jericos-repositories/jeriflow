@@ -45,7 +45,7 @@ export default function Image() {
         <span>better work.</span>
       </div>
       <div style={{ display: "flex", fontSize: 25, color: "#565656" }}>
-        A calm workspace for people who make things. · Product concept
+        A calm workspace for people who make things.
       </div>
     </div>,
     size,

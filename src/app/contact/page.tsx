@@ -5,16 +5,16 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { pageMetadata } from "@/lib/site-config";
 export const metadata = pageMetadata(
   "Contact",
-  "Explore the JeriFlow contact-form concept with accessible validation. Message delivery is not connected.",
+  "A question about JeriFlow or a workflow worth exploring? Organize your thoughts and review your message with clear, accessible guidance.",
   "/contact",
 );
 export default function ContactPage() {
   return (
     <>
       <PageIntro
-        eyebrow="LET'S TALK ABOUT THE IDEA"
+        eyebrow="ROOM FOR A CONVERSATION"
         title="A little conversation can go a long way."
-        description="A question about JeriFlow, a thought on the design, or a workflow worth exploring. Here is how that conversation could begin."
+        description="A question about JeriFlow, a thought on the design, or a workflow worth exploring. Start with what matters to you."
       />
       <section className="container contact-layout section" data-motion-stagger>
         <aside className="contact-aside">
@@ -23,18 +23,19 @@ export default function ContactPage() {
           </span>
           <h2>Room for your perspective.</h2>
           <p>
-            This is a portfolio demonstration of the contact experience. You can
-            try the fields and validation, but messages are not delivered.
+            What are you working on? Where does the process get in your way?
+            Put the details into words and give your next conversation a clear
+            starting point.
           </p>
           <div className="contact-aside-note">
             <Shapes size={22} aria-hidden="true" />
             <div>
               <h3>Still exploring?</h3>
               <p>
-                Get a feel for the proposed workspace before trying the form.
+                See how projects, tasks, and notes fit together in the workspace.
               </p>
               <ButtonLink href="/product#demo" variant="text">
-                Explore the product demo
+                Explore the workspace
               </ButtonLink>
             </div>
           </div>

@@ -11,7 +11,7 @@ export function PricingTable() {
         <div
           className="interval-toggle"
           role="group"
-          aria-label="Illustrative billing interval"
+          aria-label="Pricing interval"
         >
           <button
             type="button"
@@ -29,7 +29,7 @@ export function PricingTable() {
           </button>
         </div>
         <span className="fine-print">
-          Illustrative USD prices. No subscriptions are active.
+          Prices in USD. Find the right fit for your work.
         </span>
       </div>
       <div className="pricing-grid" aria-live="polite" data-motion-stagger>
@@ -55,16 +55,16 @@ export function PricingTable() {
               </div>
               <p className="billing-note">
                 {yearly && plan.monthly > 0
-                  ? `${displayPrice(price * 12)} per person, billed yearly (proposed).`
+                  ? `${displayPrice(price * 12)} per person for the full year.`
                   : plan.monthly === 0
-                    ? "Proposed free individual plan."
-                    : "Proposed monthly billing."}
+                    ? "For your personal projects."
+                    : "Per person, one month at a time."}
               </p>
               <ButtonLink
-                href="/contact#contact-form"
+                href="/pricing#plan-comparison"
                 variant={plan.featured ? "primary" : "outline"}
               >
-                Discuss {plan.name}
+                Explore {plan.name}
               </ButtonLink>
               <ul>
                 {plan.features.map((feature) => (
@@ -79,9 +79,8 @@ export function PricingTable() {
         })}
       </div>
       <p className="pricing-disclaimer">
-        Plans and feature allocations are proposed concepts, not existing
-        commercial offers. Yearly pricing assumes 20% off the monthly rate, paid
-        for a full year.
+        A pricing guide for comparing plans. Yearly totals include 20% off the
+        monthly rate. This site does not take payments.
       </p>
     </div>
   );

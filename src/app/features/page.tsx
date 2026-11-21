@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/site-config";
 import "./features.css";
 export const metadata = pageMetadata(
   "Features",
-  "Six proposed capabilities for calmer creative work: tasks, boards, collaboration, progress, notes, and focus.",
+  "Six ways to bring clarity to creative work: tasks, boards, collaboration, progress, notes, and focus.",
   "/features",
 );
 export default function FeaturesPage() {
@@ -16,7 +16,7 @@ export default function FeaturesPage() {
       <PageIntro
         eyebrow="THOUGHTFULLY CONNECTED"
         title="Everything your work needs. A little less of everything else."
-        description="Six proposed capabilities, one clear idea: keep the work and its context together. Explore the pieces of the JeriFlow product concept."
+        description="Six ways to keep the work and its context together. Find a clear next step, a place for your notes, and a view of the bigger picture."
       >
         <nav className="jf-feature-featureNav" aria-label="Explore features">
           {features.map((feature) => (
@@ -56,10 +56,10 @@ export default function FeaturesPage() {
       </div>
       <section className="container section compact-callout" data-motion="reveal">
         <p>
-          These capabilities are a product direction, not a claim of a live service.
+          See how tasks, notes, and progress come together in one workspace.
         </p>
         <ButtonLink href="/product#demo" variant="outline">
-          See the interactive concept
+          Explore the workspace
         </ButtonLink>
       </section>
       <Cta />

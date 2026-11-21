@@ -33,7 +33,7 @@ function TaskDemo() {
   return (
     <DemoFrame name="task management" hint="Try it: check a task and watch your progress update." onReset={() => setDone(["brief"])}>
       <div className="jf-demo-demoBody">
-        <div className="jf-demo-titleRow"><div><span className="jf-demo-overline">TODAY&apos;S FOCUS ? SAMPLE</span><h3>A little progress, every day.</h3></div><span className={`jf-demo-badge blue`}>3 tasks</span></div>
+        <div className="jf-demo-titleRow"><div><span className="jf-demo-overline">TODAY&apos;S FOCUS</span><h3>A little progress, every day.</h3></div><span className={`jf-demo-badge blue`}>3 tasks</span></div>
         <div className="jf-demo-taskList">
           {taskSamples.map(task => <label className={`jf-demo-taskRow ${done.includes(task.id) ? "jf-demo-completed" : ""}`} key={task.id}>
             <input type="checkbox" checked={done.includes(task.id)} onChange={() => toggle(task.id)} />
@@ -68,7 +68,7 @@ function BoardDemo() {
             <div className="jf-demo-columnTitle"><i className={`jf-demo-dot${index}`} aria-hidden="true" />{stage}<span>{tasks.filter(task => task.stage === index).length}</span></div>
             {tasks.filter(task => task.stage === index).map(task => <article className="jf-demo-boardCard" key={task.id}>
               <span className={`jf-demo-tag ${index === 2 ? "mint" : index === 1 ? "lavender" : "blue"}`}>{task.label}</span>
-              <h4>{task.title}</h4><small>Sample task</small>
+              <h4>{task.title}</h4><small>Creative workflow</small>
               <div className="jf-demo-cardActions"><Avatar initials={task.owner} /><div>
                 {[-1, 1].map(direction => <button type="button" key={direction} disabled={task.stage + direction < 0 || task.stage + direction > 2} aria-label={`Move ${task.title} ${direction < 0 ? "back" : "forward"}`} onClick={() => move(task.id, direction)} ref={node => {
                   if (node && moveFocus.current === task.id && direction === (task.stage === 2 ? -1 : 1)) { node.focus({ preventScroll: true }); moveFocus.current = null; }

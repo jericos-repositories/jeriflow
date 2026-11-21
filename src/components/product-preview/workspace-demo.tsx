@@ -116,7 +116,7 @@ export function WorkspaceDemo() {
   const [allTasks, setAllTasks] = useState(initial);
   const [view, setView] = useState<(typeof views)[number]["name"]>("Board");
   const [notice, setNotice] = useState(
-    "Switch a view or move a sample task. Changes stay in this preview.",
+    "Switch views, organize tasks, and keep your next step in sight.",
   );
   const nextId = useRef(20);
   const tasks = allTasks[project];
@@ -131,7 +131,7 @@ export function WorkspaceDemo() {
         item.id === task.id ? { ...item, status } : item,
       ),
     }));
-    setNotice(`“${task.name}” moved to ${status}. Demo only.`);
+    setNotice(`“${task.name}” moved to ${status}.`);
   }
   function addTask() {
     const id = nextId.current++;
@@ -141,7 +141,7 @@ export function WorkspaceDemo() {
         ...current[project],
         {
           id,
-          name: `New sample task ${id - 19}`,
+          name: `New task ${id - 19}`,
           category: "Planning",
           status: "To do",
           owner: "YOU",
@@ -151,7 +151,7 @@ export function WorkspaceDemo() {
     }));
     setView("Board");
     setNotice(
-      "A fictional task was added to To do. Nothing is saved outside this preview.",
+      "Your new task is ready in To do.",
     );
   }
   function tabKey(event: KeyboardEvent<HTMLButtonElement>, index: number) {
@@ -195,7 +195,7 @@ export function WorkspaceDemo() {
           <i />
         </div>
         <span>JeriFlow / Studio workspace</span>
-        <span className="demo-label">Interactive concept</span>
+        <span className="demo-label">Interactive workspace</span>
       </div>
       <div className="workspace-layout">
         <aside className="workspace-sidebar">
@@ -207,7 +207,7 @@ export function WorkspaceDemo() {
             <LayoutDashboard size={16} />
             Overview
           </div>
-          <div className="sidebar-caption">SAMPLE PROJECTS</div>
+          <div className="sidebar-caption">PROJECTS</div>
           {Object.keys(initial).map((name) => (
             <button
               type="button"
@@ -216,7 +216,7 @@ export function WorkspaceDemo() {
               aria-pressed={name === project}
               onClick={() => {
                 setProject(name);
-                setNotice(`${name} sample project selected.`);
+                setNotice(`${name} selected.`);
               }}
             >
               <span
@@ -228,7 +228,7 @@ export function WorkspaceDemo() {
           <div className="sidebar-note">
             <span className="avatar">JR</span>
             <div>
-              Jerico Studio<small>Fictional team workspace</small>
+              Jerico Studio<small>Creative workspace</small>
             </div>
           </div>
         </aside>
@@ -241,14 +241,14 @@ export function WorkspaceDemo() {
             </div>
             <div
               className="avatar-stack"
-              aria-label="Three fictional collaborators"
+              aria-label="Project collaborators"
             >
               <span className="avatar">JR</span>
               <span className="avatar lavender">MK</span>
               <span className="avatar mint">AL</span>
             </div>
           </div>
-          <div className="mobile-projects" aria-label="Sample projects">
+          <div className="mobile-projects" aria-label="Projects">
             {Object.keys(initial).map((name) => (
               <button
                 type="button"
@@ -311,7 +311,7 @@ export function WorkspaceDemo() {
             </div>
             <button type="button" className="add-task" onClick={addTask}>
               <Plus size={16} />
-              Add sample task
+              Add task
             </button>
           </div>
           <div
@@ -362,7 +362,7 @@ export function WorkspaceDemo() {
                       ))}
                     {tasks.every((task) => task.status !== status) && (
                       <p className="empty-lane">
-                        Nothing here. Move a sample task into this stage.
+                        Ready for the next step. Move a task into this stage.
                       </p>
                     )}
                   </section>
@@ -407,7 +407,7 @@ export function WorkspaceDemo() {
                   <span className="avatar lavender">MK</span>
                   <p>
                     Let&apos;s review the mobile flow before the next handoff.
-                    <small>Fictional teammate comment</small>
+                    <small>Design review</small>
                   </p>
                   <MessageSquare size={16} />
                 </div>
@@ -422,7 +422,7 @@ export function WorkspaceDemo() {
                 <progress
                   max={tasks.length}
                   value={done}
-                  aria-label="Sample project completion"
+                  aria-label="Project completion"
                 />
                 {statuses.map((status) => (
                   <div className="progress-row" key={status}>
@@ -435,7 +435,7 @@ export function WorkspaceDemo() {
                 ))}
                 <p>
                   <Check size={16} />
-                  Progress updates when you move sample tasks.
+                  Progress updates as tasks move forward.
                 </p>
               </div>
             )}
@@ -446,8 +446,7 @@ export function WorkspaceDemo() {
         </div>
       </div>
       <p className="demo-disclaimer">
-        Fictional data. Demo changes reset on reload. No real projects,
-        accounts, or collaboration.
+        Explore with sample projects. Your changes reset when you reload.
       </p>
     </div>
   );

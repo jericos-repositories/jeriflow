@@ -7,8 +7,8 @@ import { Cta } from "@/components/marketing/cta";
 import { pricingFaqs } from "@/lib/content";
 import { pageMetadata } from "@/lib/site-config";
 export const metadata = pageMetadata(
-  "Proposed pricing",
-  "Explore illustrative Starter, Creator, and Team plans for JeriFlow. No active subscriptions or payments.",
+  "Pricing",
+  "Compare Starter, Creator, and Team plans for JeriFlow. Find the right fit for personal projects, creative work, and shared priorities.",
   "/pricing",
 );
 const comparison = [
@@ -28,25 +28,25 @@ export default function PricingPage() {
       <PageIntro
         eyebrow="ROOM TO GROW"
         title="Start small. Find your flow."
-        description="A proposed pricing direction for individuals and small teams. Explore the idea, with every assumption out in the open."
+        description="A little structure for your own projects. More room for your creative work. A shared direction for your team. Compare the options and find your fit."
       />
       <section className="container pricing-page">
         <PricingTable />
       </section>
-      <section className="container section">
+      <section className="container section" id="plan-comparison">
         <SectionHeading
-          eyebrow="THE PROPOSED DETAILS"
+          eyebrow="THE DETAILS, TOGETHER"
           title="A place for every stage."
-          description="This comparison describes the concept's intended plan structure. Features and limits are not finalized."
+          description="Compare the tools for each stage of your work, from personal task boards to shared team priorities."
         />
         <div className="table-scroll" data-motion="reveal">
           <table className="comparison-table">
             <caption className="sr-only">
-              Illustrative JeriFlow plan features
+              JeriFlow plan comparison
             </caption>
             <thead>
               <tr>
-                <th scope="col">Proposed capability</th>
+                <th scope="col">Capability</th>
                 <th scope="col">Starter</th>
                 <th scope="col">Creator</th>
                 <th scope="col">Team</th>
@@ -61,13 +61,13 @@ export default function PricingPage() {
                       {included ? (
                         <>
                           <Check size={18} aria-hidden="true" />
-                          <span className="sr-only">Proposed inclusion</span>
+                          <span className="sr-only">Included</span>
                         </>
                       ) : (
                         <>
                           <Minus size={17} aria-hidden="true" />
                           <span className="sr-only">
-                            Not proposed in this plan
+                            Not included in this plan
                           </span>
                         </>
                       )}

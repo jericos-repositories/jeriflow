@@ -20,7 +20,7 @@ export function NotePreview() {
       <div className="comment-row">
         <span className="avatar lavender">MK</span>
         <span>
-          Ready for the next review.<small>Fictional teammate comment</small>
+          Ready for the next review.<small>Design review</small>
         </span>
         <MessageSquare size={17} />
       </div>
@@ -30,7 +30,7 @@ export function NotePreview() {
 export function ProgressPreview() {
   return (
     <div className="mini-progress">
-      <span className="mini-label">WEBSITE REDESIGN · SAMPLE</span>
+      <span className="mini-label">WEBSITE REDESIGN</span>
       <h3>From idea to handoff.</h3>
       {[
         { name: "Discovery & direction", done: true },
@@ -44,9 +44,9 @@ export function ProgressPreview() {
           <small>{item.done ? "Done" : "Next"}</small>
         </div>
       ))}
-      <p>Illustrative project progress</p>
+      <p>Two milestones down. A clear path ahead.</p>
       <progress
-        aria-label="Illustrative milestone completion"
+        aria-label="Milestone completion"
         value={2}
         max={4}
       />

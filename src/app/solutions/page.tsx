@@ -16,7 +16,7 @@ export default function SolutionsPage() {
       <PageIntro
         eyebrow="YOUR WORK. YOUR WAY."
         title="Different kinds of makers. A shared need for clarity."
-        description="A client handoff, a design review, a small release. JeriFlow imagines a calmer home for the work that moves your day forward."
+        description="A client handoff, a design review, a small release. Give the work that moves your day forward a calmer place to live."
       />
       <nav className="audience-jumps container" aria-label="Audience sections">
         {audiences.map((a) => (
@@ -39,7 +39,7 @@ export default function SolutionsPage() {
               <p className="body-copy">{audience.problem}</p>
               <p className="body-copy">{audience.benefit}</p>
               <ButtonLink href="/product#demo" variant="text">
-                Explore a sample workflow
+                Explore the workflow
               </ButtonLink>
             </div>
             <div className={`scenario-panel ${audience.tone}`}>
@@ -50,7 +50,7 @@ export default function SolutionsPage() {
                 alt={`${audience.name} workflow illustration`}
               />
               <div className="scenario-copy">
-                <span className="mini-label">AN ILLUSTRATIVE DAY AT WORK</span>
+                <span className="mini-label">A DAY IN YOUR FLOW</span>
                 <h3>{audience.scenario}</h3>
                 <ul>
                   {audience.tasks.map((task) => (

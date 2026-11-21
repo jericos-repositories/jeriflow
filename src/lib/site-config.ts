@@ -5,7 +5,7 @@ export const siteConfig = {
   studio: "Jerico Studio",
   title: "JeriFlow — Make room for better work",
   description:
-    "Projects, tasks, notes, and creative momentum in one calm workspace. Explore the JeriFlow product concept by Jerico Studio.",
+    "Projects, tasks, notes, and creative momentum in one calm workspace. Make room for better work with JeriFlow by Jerico Studio.",
 };
 
 export const navigation = [
