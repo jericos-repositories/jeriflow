@@ -10,7 +10,7 @@ export const metadata = pageMetadata(
 );
 export default function AboutPage() {
   return (
-    <>
+    <div className="about-page">
       <PageIntro
         eyebrow="THE STUDIO BEHIND THE FLOW"
         title="Thoughtful software. A little more human."
@@ -32,7 +32,7 @@ export default function AboutPage() {
           Not give you more to think about.
         </p>
       </section>
-      <section className="container section split-layout" data-motion-stagger>
+      <section className="container section split-layout about-story" data-motion-stagger>
         <div>
           <p className="eyebrow">WHY JERIFLOW</p>
           <h2>
@@ -83,9 +83,9 @@ export default function AboutPage() {
                 title: "Craft that serves the work",
                 text: "Make the small details consistent, accessible, and useful. Good design should earn its place.",
               },
-            ].map((item) => (
+            ].map((item, index) => (
               <article key={item.title}>
-                <item.icon size={27} strokeWidth={1.75} />
+                <div className="principle-top"><item.icon size={27} strokeWidth={1.75} /><span>0{index + 1}</span></div>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </article>
@@ -94,7 +94,7 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="container section studio-direction" data-motion="reveal">
-        <p className="eyebrow">OUR DESIGN PHILOSOPHY</p>
+        <p className="eyebrow">OUR DESIGN PHILOSOPHY</p><div className="about-path" aria-label="From idea to delivery"><span>01 / Imagine</span><span>02 / Make</span><span>03 / Refine</span></div>
         <h2>
           Build carefully.
           <br />
@@ -111,6 +111,6 @@ export default function AboutPage() {
         </p>
       </section>
       <Cta />
-    </>
+    </div>
   );
 }
