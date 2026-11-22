@@ -24,7 +24,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Run relevant checks after changes and report failures. Do not invent successful test results or deploy when the task is only repository setup.
 - Shared workflows are maintained in the separate `agent-skills` repository and linked into the user's skill discovery directory. Use `$create-website-repo` for new repository setup, not routine edits to this site. A fresh machine or hosted session needs its own shared-skill installation.
 - Read `docs/handoff.md` for current task context. `eng-handoff` reads the changes but commits/pushes only that single Markdown file, excluding earlier unpushed code commits. Use `eng-publish pr` or an explicitly chosen `eng-publish direct-main` for code synchronization and publication. Use concise task/branch/PR names tied to the core change; preserve teammate work and block on conflicting intent. Keep routine screenshot output PNG-only.
-- This project's authorized GitHub destination is the private repository `jericos-repositories/jeriflow`. Shared procedures do not grant permission to modify sibling repositories.
+- This project's authorized GitHub destination is the public repository `jericos-repositories/jeriflow`. Shared procedures do not grant permission to modify sibling repositories.
 
 ## Publication policy
 
@@ -32,3 +32,5 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - `eng-handoff` targets `main` with only `docs/handoff.md` from an isolated candidate where direct documentation pushes are permitted. If main later requires PRs, retain the candidate and block that push pending separate authorization for a documentation-only PR. Do not change destinations or use an administrator bypass.
 - Use normal single-ref pushes; no force pushes, branch deletion, rewriting shared history, or protection bypass as part of these workflows.
 - Observed 21 November 2026: this private repository's `main` reported `protected: false`; the organization plan is `free`, and protection/effective-rules APIs returned upgrade-required HTTP 403 despite authenticated admin repository access. GitHub-enforced private-branch protection is unavailable on that plan. The workflow checks above remain required but are not server enforcement. Recheck at publication; plan upgrades, visibility changes, and rule changes require their own requested scope.
+
+- Confirmed 22 November 2026: Jeriflow is now public, as verified on GitHub and confirmed by the user. The 21 November private-plan observation above is historical; recheck current branch rules for publication. The shared `agent-skills` repository remains private.

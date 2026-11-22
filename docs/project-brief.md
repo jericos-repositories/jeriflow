@@ -8,7 +8,7 @@ JeriFlow is the proposed workspace product by Jerico Studio, a fictional founder
 
 - [Original design blueprint](reference/jerico-studio-jeriflow-blueprint.html), preserved byte-for-byte. SHA-256: `e1dfdc4b12babc788f68b82faa3d94bce3f398d8183a4013506e0bda66e14619`.
 - [User's implementation request](reference/implementation-request.md), authorizing the full Phase 1 marketing experience beyond the original starter.
-- Private source destination: `jericos-repositories/jeriflow`. Public deployment is not authorized by this implementation request.
+- Public source destination: `jericos-repositories/jeriflow`. Public deployment is not authorized by this implementation request.
 
 ## Implemented routes
 
