@@ -2,19 +2,29 @@
 
 ## Current state
 
-- Updated: 22 November 2026, 08:00 Asia/Manila (UTC+08:00).
-- Status: Interactive Features redesign, refined site copy, and the remaining handoff links are published to `main` in `jericos-repositories/jeriflow`.
-- Source workspace: local `main` remains at `6e3b7da7d50134738b4039fdfdd8ecf6a2730c47`. Its older HEAD makes published files appear modified or untracked. The source branch and index have been preserved; the source handoff copy is updated locally by this task.
-- Published application baseline: `d5a64ee617b94c608ded73acb109a8ffb5347b30` (refined marketing language), following merged Features PR #3 at `afeecb0e468de22aca165a746baa756c623846f0` and merged motion PR #2 at `b559cb7fcb14a460cf9ce86d5538300035333ecb`.
-- Verified remote tip before this handoff: `5a4dd458253ae4def6562cde5eb988b14f448af8` (AGENTS/README handoff links). The source application files and documentation matched that published tree when the final publication was reviewed; no pending application payload was found.
-- Repository visibility: public, confirmed during this session. The user explicitly authorized publication to the public repository. Existing private-repository references in project documentation are stale; this handoff does not change those files or repository visibility.
-- Destination: `main`, with only `docs/handoff.md` published from a detached checkout of the verified remote tip. Main is unprotected; effective branch rules returned an empty list and classic protection reported branch not protected.
-- Validation: lint, TypeScript, production build, asset integrity, and all 19 Chromium tests passed on the combined application/copy candidate before `d5a64ee`. Later documentation changes passed link/diff checks and Git scope preflight; application tests were not repeated for documentation-only commits. Vercel reported success for `5a4dd45`; no live-site acceptance audit is claimed.
-- Shared workflow update: `agent-skills/main` at `782e22141b7a7b174ab7036612dbf0c18ace6742` excludes asset integrity checks and browser tests from default PR/push validation unless explicitly requested. Lint, types, and build remain applicable; enforced remote CI is honored.
-- Known issue: the unchanged shared header logo accessible name omits its visible studio subtitle. Feature-content accessibility checks passed; a complete manual or cross-browser audit is not claimed.
-- Resume: fetch the latest remote and use its published state as the base for new work. Preserve the older source workspace and reconcile it deliberately when synchronization is requested. Product data is fictional and local; reload resets demos, contact validates without delivery, and the site collects no payments. Indexing still requires an approved origin and explicit configuration.
+- Updated: 22 November 2026, Asia/Manila (UTC+08:00).
+- Status: About page improvements and public-repository documentation are published through merged [PR #4](https://github.com/jericos-repositories/jeriflow/pull/4).
+- Published main baseline: `0566bc4e018a4c8b6bd03dafd8e79bd767d67b3b`. Vercel and Vercel Preview Comments reported success for PR #4.
+- Source workspace: `feat/about-page-polish` at `2da58978f992609bbdba1ec7143fdfd17f733c55`; clean before this handoff. This task leaves its updated handoff copy uncommitted and preserves source HEAD and index.
+- Repository visibility: public, verified on GitHub and confirmed by the user. Project AGENTS, README, and brief now reflect this. The separate agent-skills repository remains private.
+- Documentation destination: main, from an isolated detached worktree; only docs/handoff.md is published. Main reports unprotected and effective rules/rulesets are empty. Recheck rules at future publication.
+- Validation: lint, typecheck, and production build passed on the About application changes. Focused QA passed three Chrome scenarios at 1440x900, 390x844, and 768x1024, covering overflow, runtime errors, hover behavior, and reduced motion. Other browsers were not tested; no full accessibility audit is claimed. Expected localhost metadata-base warning remains.
+- Separate local work: eng-publish skill guidance was updated in agent-skills to honor user-confirmed visibility changes; that shared-skill edit has not been published by this Jeriflow workflow.
+- Existing known issue from prior handoff: shared header logo accessible name omits the visible studio subtitle; not addressed by this task.
+- Next action: start new application work from fetched main and deliberately synchronize the preserved source branch when requested. No About code remains pending publication. Product data remains fictional; demos reset on reload, contact sends/stores nothing, and no payments are collected.
 
 ## Task history
+
+### 22 November 2026 ? Improve and publish About page
+
+**Request and result:** Improve About UI/UX with animations and effects. The page now has a soft gradient studio panel and decorative rings, a framed teamwork illustration, numbered principle cards with hover lifts, and an Imagine / Make / Refine sequence. Existing scroll reveals are retained; the illustration entrance and hover effects respect reduced-motion preferences. Changes are in src/app/about/page.tsx and src/app/globals.css.
+
+**Review and validation:** Lint, typecheck, and build passed. Three focused Chrome checks observed no horizontal overflow or JavaScript errors, verified desktop card lift and reduced-motion suppression. Mobile/tablet/desktop visual evidence was inspected locally. Other browsers and a comprehensive accessibility audit remain untested. No application checks were rerun for this Markdown-only handoff.
+
+**Publication:** Application commit 7664204 and visibility documentation commit 2da5897 were pushed on feat/about-page-polish. PR #4 was subsequently observed merged into main at 0566bc4; this agent did not merge it. Vercel checks passed. Initial publication was paused over stale private-repository guidance; the user confirmed Jeriflow is public, documentation was corrected, and a new explicit publication request authorized the successful PR. No repository settings were changed.
+
+**Handoff boundary:** This update publishes only docs/handoff.md from the latest main baseline. Source branch, application files, and index are preserved. Shared skill changes remain separate and local.
+
 
 ### 22 November 2026, 08:00 Asia/Manila ? Publish Features, site copy, and current context
 
