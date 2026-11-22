@@ -1,6 +1,6 @@
 # JeriFlow by Jerico Studio
 
-A seven-page Next.js marketing website for a fictional, calm project and workflow workspace. Private source repository: [jericos-repositories/jeriflow](https://github.com/jericos-repositories/jeriflow).
+A seven-page Next.js marketing website for a fictional, calm project and workflow workspace. Public source repository: [jericos-repositories/jeriflow](https://github.com/jericos-repositories/jeriflow).
 
 ## What works
 
@@ -91,7 +91,7 @@ The project `AGENTS.md` contains portable project instructions and generated, ve
 
 Use `jeriflow $eng-publish pr` for code synchronization, validation, a short task branch, and a concise PR with relevant PNGs. Use `jeriflow $eng-publish direct-main` only for explicitly requested direct code publication permitted by repository rules. These workflows preserve unrelated work and stop for conflicts requiring a product decision. Creating/installing them does not publish the current changes. Routine screenshot folders remain PNG-only.
 
-The dated branch-policy observations are in [AGENTS.md](AGENTS.md). The current private-repository setup has no GitHub-enforced main protection on the organization's Free plan; the skills apply the documented workflow checks. If main later requires PRs, the Markdown-only handoff also stops for separate documentation-PR authorization.
+The dated branch-policy observations are in [AGENTS.md](AGENTS.md). Jeriflow is now public; the earlier private-plan observations are historical. Recheck current GitHub rules at publication. If main later requires PRs, the Markdown-only handoff also stops for separate documentation-PR authorization.
 
 ## Future release decisions
 
