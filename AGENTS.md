@@ -16,6 +16,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Preserve the framework guidance above. Read the relevant version-matched docs in `node_modules/next/dist/docs/` before writing Next.js code.
 - Use Node 24 LTS, npm, and `package-lock.json`. Commands: `npm run dev`, `npm run lint`, `npm run typecheck`, `npm run build`, then `npm run test:e2e` against the production build.
 - Routes and layouts belong in `src/app/`, reusable UI in `src/components/`, shared helpers and content in `src/lib/`, and served assets in `public/`. Create optional directories when needed.
+- Store local website screenshot evidence in the ignored root `screenshots/` directory.
 - Use lowercase-hyphenated ordinary filenames, PascalCase React component exports, and camelCase functions; preserve Next.js special filenames.
 - Keep actual credentials out of Git. Add `.env.example` only when real environment requirements exist.
 - Follow the blueprint's color tokens, accessible focus states, reduced-motion support, and mobile-first direction. Use Lucide React for interface icons and locally hosted Inter via next/font. Four generic archive illustrations were palette-adapted; old-brand logos and mockups were replaced. See `docs/asset-audit.md` and `docs/asset-manifest.json`.
