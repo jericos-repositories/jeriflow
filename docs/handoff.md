@@ -2,18 +2,26 @@
 
 ## Current state
 
-- Updated: 22 November 2026, Asia/Manila (UTC+08:00).
-- Status: About page improvements and public-repository documentation are published through merged [PR #4](https://github.com/jericos-repositories/jeriflow/pull/4).
-- Published main baseline: `0566bc4e018a4c8b6bd03dafd8e79bd767d67b3b`. Vercel and Vercel Preview Comments reported success for PR #4.
-- Source workspace: `feat/about-page-polish` at `2da58978f992609bbdba1ec7143fdfd17f733c55`; clean before this handoff. This task leaves its updated handoff copy uncommitted and preserves source HEAD and index.
-- Repository visibility: public, verified on GitHub and confirmed by the user. Project AGENTS, README, and brief now reflect this. The separate agent-skills repository remains private.
-- Documentation destination: main, from an isolated detached worktree; only docs/handoff.md is published. Main reports unprotected and effective rules/rulesets are empty. Recheck rules at future publication.
-- Validation: lint, typecheck, and production build passed on the About application changes. Focused QA passed three Chrome scenarios at 1440x900, 390x844, and 768x1024, covering overflow, runtime errors, hover behavior, and reduced motion. Other browsers were not tested; no full accessibility audit is claimed. Expected localhost metadata-base warning remains.
-- Separate local work: eng-publish skill guidance was updated in agent-skills to honor user-confirmed visibility changes; that shared-skill edit has not been published by this Jeriflow workflow.
-- Existing known issue from prior handoff: shared header logo accessible name omits the visible studio subtitle; not addressed by this task.
-- Next action: start new application work from fetched main and deliberately synchronize the preserved source branch when requested. No About code remains pending publication. Product data remains fictional; demos reset on reload, contact sends/stores nothing, and no payments are collected.
+- Updated: 28 November 2026, 20:46, Asia/Manila (UTC+08:00).
+- Status: The interactive Solutions redesign is published directly on `main` at `6888f6607178a739b8389ccac782e391d37d411a`.
+- Source workspace: Local `main` matches fetched `origin/main` at `6888f6607178a739b8389ccac782e391d37d411a`; the working tree and index were clean before this handoff update. No local branch contains commits absent from all remotes.
+- Published experience: `/solutions` now has sticky audience navigation and fictional interactive workflows for freelancers, designers, developers, and small teams. State remains local and resets on reload; no write requests, accounts, storage, billing, or collaboration services were added.
+- Validation: `npm run lint`, `npm run typecheck`, and `npm run build` passed on the published Solutions candidate. The build retained the expected localhost `metadataBase` warning because no production origin is configured. Browser and end-to-end tests were not run for that publication.
+- Repository and destination: Public `jericos-repositories/jeriflow`; this handoff targets `origin/main` and changes only `docs/handoff.md`. GitHub reports `main` unprotected, with no effective branch rules or rulesets. Recheck at future publication.
+- Existing known issue: The shared header logo accessible name omits the visible studio subtitle; it remains outside the Solutions task.
+- Next action: Begin future application work from fetched `main`. If further confidence in the Solutions interactions is needed, run the focused Solutions Playwright coverage before broader QA. Public hosting, a production origin/indexing decision, and real contact delivery remain future work.
 
 ## Task history
+
+### 28 November 2026, 20:46, Asia/Manila - Publish interactive Solutions workflows
+
+**Request and result:** Completed the in-progress Solutions redesign and published it directly to `main` as `6888f6607178a739b8389ccac782e391d37d411a`. The route keeps the original four audiences and marketing copy while replacing static illustrations with audience-specific fictional workspace demos.
+
+**Implementation:** `src/app/solutions/page.tsx` and `src/app/solutions/solutions.css` now provide the audience layout, responsive styling, reduced-motion behavior, and sticky navigation. `src/components/solutions/` contains the navigation plus client handoff, design review, release plan, and team workspace interactions. `tests/e2e/solutions.spec.ts` records focused coverage for deep links, local state, reset behavior, responsive overflow, reduced motion, no-JavaScript content, and the absence of write requests.
+
+**Validation and limits:** Lint, Next.js route generation and TypeScript checking, and the production build passed on the exact published candidate. The expected localhost metadata warning remains. The new Playwright file was reviewed and committed but was not executed during publication, so its browser assertions are not a fresh observed result. No deployment was performed.
+
+**Publication and handoff boundary:** GitHub verified the code commit on `origin/main`; local `main` then matched the remote with a clean tree. This separate handoff updates and publishes only `docs/handoff.md` after that code baseline.
 
 ### 22 November 2026 ? Improve and publish About page
 
